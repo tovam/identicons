@@ -19,12 +19,12 @@ const generate = ({ hash, size = 4, width = 128, segments = 5, background }) => 
   svg.att('xmlns', 'http://www.w3.org/2000/svg')
 
   if (background) {
-    addBackground(svg, {
+    addBackground(svg, Object.assign({
       color: '#EEEEEE',
       width: width,
-      rx: 0,
-      ...background
-    })
+      rx: 0},
+      background
+    ))
   }
 
   for (let i = 0; i < size; ++i) {
